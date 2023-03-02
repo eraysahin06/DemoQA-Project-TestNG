@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Smoke Test from different classes">
+
+        <groups>
+            <run>
+                <include name="SmokeTest"></include>
+            </run>
+        </groups>
+        
+        <classes>
+            <class name="day04._03_Groups">
+                <methods>
+                    <exclude name="test5"></exclude>
+                </methods>
+            </class>
+            <class name="day02._03_ValidateMenu"></class>
+        </classes>
+    </test>
+</suite>

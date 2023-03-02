@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+<!--    <test name="Test without groups">-->
+<!--        <classes>-->
+<!--            <class name="day04._03_Groups"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Test with groups 1">
+
+        <groups>
+            <run>
+                <include name="SmokeTest"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="day04._03_Groups"></class>
+        </classes>
+    </test>
+
+    <test name="Test with groups 2">
+
+        <groups>
+            <run>
+                <include name="RegressionTest"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="day04._03_Groups"></class>
+        </classes>
+    </test>
+</suite>
