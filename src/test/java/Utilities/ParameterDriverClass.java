@@ -4,22 +4,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
-public class DriverClass {
+public class ParameterDriverClass {
 
     public static WebDriver driver;
+    public static WebDriverWait wait;
 
     @BeforeClass(alwaysRun = true)
-    public void startingSettings() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    @Parameters(value = "browser")
+    public void startingSettings(String browserName){
+        if (browserName.equalsIgnoreCase("chrome")){
+            driver = new ChromeDriver();
+        }else if(browserName.equalsIgnoreCase("firefox")){
+            driver = new FirefoxDriver();
+        }
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        driver.manage().window().maximize();
+
         login();
     }
 
@@ -44,6 +54,15 @@ public class DriverClass {
         }
         driver.quit();
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+

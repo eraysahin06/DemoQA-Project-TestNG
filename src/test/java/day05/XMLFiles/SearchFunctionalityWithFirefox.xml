@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Search Functionality with FireFox">
+        <parameter name="searchKeyWord" value="mac"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="day05._03_SearchFunctionalityWithFirefox"></class>
+        </classes>
+    </test>
+</suite>
