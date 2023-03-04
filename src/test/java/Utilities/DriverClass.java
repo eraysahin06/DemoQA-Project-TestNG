@@ -13,7 +13,7 @@ public class DriverClass {
 
     public static WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void startingSettings() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -34,7 +34,7 @@ public class DriverClass {
         loginButton.click();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void finishSettings(){
         try {
             Thread.sleep(3000);
