@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Contact Us with parameter">
+        <parameter name="message1" value="We are coming to rock the market."></parameter>
+
+          <classes>
+              <class name="day05._01_ContactUsTest">
+                  <methods>
+                      <exclude name="contactUs1"></exclude> <!-- We excluded it because it requires 2 parameters-->
+                  </methods>
+              </class>
+          </classes>
+    </test>
+
+    <test name="Contact Us with 2 parameter">
+        <parameter name="message1" value="We are coming to rock the market."></parameter>
+        <parameter name="message2" value="12345"></parameter>
+
+        <classes>
+            <class name="day05._01_ContactUsTest">
+                <methods>
+                    <exclude name="contactUs"></exclude> <!-- We excluded it because it requires 1 parameter-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
