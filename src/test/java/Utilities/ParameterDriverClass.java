@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class ParameterDriverClass {
 
-    public static WebDriver driver;
+    public WebDriver driver;
     public static WebDriverWait wait;
 
     @BeforeClass(alwaysRun = true)
